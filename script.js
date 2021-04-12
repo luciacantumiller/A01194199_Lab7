@@ -1,7 +1,6 @@
 $(document).ready(function(){
     let temas = ["Spider-Man", "Thor", "Loki", "Hulk", "Iron Man", "Capitan America", "Black Widow", "Vision"];
-    let APIKEY = "EMBUyUqmcQ2r1TlUWcIc6xvoDsCutUEv"; 
-    let giphyContent = null; 
+    let APIKEY = "EMBUyUqmcQ2r1TlUWcIc6xvoDsCutUEv";  
 
     temas.forEach(function(item) {
         $('#giphy-buttons').append(`<button id="${item}" class="select"> ${item} </button>`);
@@ -23,7 +22,6 @@ $(document).ready(function(){
         fetch(url)
             .then(response => response.json())
             .then(content => {
-                giphyContent = content.data;
                 content.data.forEach(function(item){
                     $('#giphys').append(`<div class="giphy-item">
                             <p>Rating: ${item.rating}</p>
